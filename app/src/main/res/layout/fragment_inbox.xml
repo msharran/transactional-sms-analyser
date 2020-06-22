@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".ui.inbox.InboxFragment"
+    android:orientation="vertical">
+
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:orientation="horizontal"
+       android:layout_margin="10dp"
+       >
+       <EditText
+           android:id="@+id/search"
+           android:layout_width="0dp"
+           android:layout_height="match_parent"
+           android:layout_weight="6"
+           android:hint="Search by tag..."
+           android:drawableLeft="@drawable/ic_search_black_24dp"
+           android:drawablePadding="10dp"
+           android:inputType="text"
+           android:background="#fff"
+           android:elevation="4dp"
+           android:maxLength="9"
+           android:paddingStart="10dp"
+           android:paddingEnd="10dp"
+           android:layout_marginStart="2dp"
+           android:layout_marginEnd="5dp"
+           android:layout_marginTop="2dp"
+           android:layout_marginBottom="2dp"
+           android:layout_gravity="center"
+           android:maxLines="1"
+           android:singleLine="true"
+           android:autofillHints="" />
+
+       <ImageView
+           android:id="@+id/search_btn"
+           android:layout_width="0dp"
+           android:layout_height="match_parent"
+           android:layout_gravity="center"
+           android:layout_weight="1"
+           android:elevation="3dp"
+           android:paddingTop="9dp"
+           android:paddingBottom="9dp"
+           android:background="@color/colorAccent"
+           android:src="@drawable/ic_search_black_24dp" />
+   </LinearLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/inboxRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="12"
+        android:scrollbarSize="10dp"
+        android:fadeScrollbars="false"
+        tools:listitem="@layout/sms_inbox"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        />
+
+</LinearLayout>
